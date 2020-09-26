@@ -1,0 +1,65 @@
+﻿@model RnReddyITSchools.Training.Web.Presentation.Models.Customer
+
+<h2>Customer Registration Form</h2>
+<hr />
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#onClientClick").click(function () {
+            ValidateCustomerRegistrationForm();
+        });
+        function ValidateCustomerRegistrationForm() {
+            if (!$("#customerRegistrstionForm").valid()) {
+                return false;
+            }
+        }
+    }
+
+</script>
+
+
+<form id="customerRegistrstionForm">
+
+    <div class="container ">
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => Model.FirstName)
+                @Html.TextBoxFor(m => Model.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.FirstName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => Model.LastName)
+                @Html.TextBoxFor(m => Model.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.LastName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => Model.Email)
+                @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Email, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => Model.Address)
+                @Html.TextBoxFor(m => Model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Address, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <input type="submit" value="Register" />
+        <input type="submit" value="Cancel" />
+    </div>
+
+</form>

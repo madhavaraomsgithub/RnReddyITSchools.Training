@@ -17,7 +17,7 @@ namespace RnReddyITSchools.Training.Web.Presentation.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-            w
+            
 
             return View();
         }
